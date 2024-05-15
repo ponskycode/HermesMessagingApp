@@ -1,13 +1,9 @@
-import { Routes } from '@angular/router';
+import { ApplicationConfig } from '@angular/core';
 import { provideRouter } from '@angular/router';
-import { UsernamePageComponent } from './username-page/username-page.component';
-import { ChatPageComponent } from './chat-page/chat-page.component';
 
-export const routes: Routes = [
-  { path: '', component: UsernamePageComponent },
-  { path: 'chat', component: ChatPageComponent }
-];
+import { routes } from './app.routes';
+import { provideClientHydration } from '@angular/platform-browser';
 
-export const appRoutingProviders = [
-  provideRouter(routes)
-];
+export const appConfig: ApplicationConfig = {
+  providers: [provideRouter(routes), provideClientHydration()]
+};
