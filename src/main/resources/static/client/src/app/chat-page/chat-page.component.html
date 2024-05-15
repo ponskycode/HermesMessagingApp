@@ -1,0 +1,19 @@
+<div class="chat-container">
+    <div class="chat-header">
+        <h2>Hermes Chat Demo</h2>
+    </div>
+    <div class="connecting" *ngIf="connecting">
+        Connecting...
+    </div>
+    <ul id="messageArea">
+        <li *ngFor="let message of messages">{{message}}</li>
+    </ul>
+    <form (ngSubmit)="sendMessage()">
+        <div class="form-group">
+            <div class="input-group clearfix">
+                <input type="text" [(ngModel)]="message" name="message" placeholder="Type a message..." autocomplete="off" class="form-control"/>
+                <button type="submit" class="primary">Send</button>
+            </div>
+        </div>
+    </form>
+</div>
