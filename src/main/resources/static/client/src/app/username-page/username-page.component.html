@@ -1,1 +1,11 @@
-<p>username-page works!</p>
+<div class="username-page-container">
+    <h1 class="title">Type your username to enter the Chatroom</h1>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <input type="text" [(ngModel)]="username" name="username" placeholder="Username" autocomplete="off" class="form-control" />
+        </div>
+        <div class="form-group">
+            <button type="submit" class="accent username-submit">Enter Chatroom</button>
+        </div>
+    </form>
+</div>
