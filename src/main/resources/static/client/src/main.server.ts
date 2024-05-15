@@ -1,7 +1,17 @@
-import { bootstrapApplication } from '@angular/platform-browser';
-import { AppComponent } from './app/app.component';
-import { config } from './app/app.config.server';
+import { TestBed } from '@angular/core/testing';
 
-const bootstrap = () => bootstrapApplication(AppComponent, config);
+import { ChatService } from './chat.service';
 
-export default bootstrap;
+describe('ChatService', () => {
+  let service: ChatService;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({});
+    service = TestBed.inject(ChatService);
+  });
+
+  it('should be created', () => {
+    expect(service).toBeTruthy();
+  });
+});
+
